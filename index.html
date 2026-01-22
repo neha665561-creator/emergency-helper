@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Helper | Instant Assistance</title>
+
+<style>
+:root {
+  --red: #e53935;
+  --blue: #1e88e5;
+  --green: #43a047;
+  --dark: #1f2933;
+  --light: #f9fafb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f44336, #e57373);
+  min-height: 100vh;
+  color: var(--dark);
+}
+
+/* Header */
+header {
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header p {
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Main Card */
+main {
+  max-width: 420px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Buttons */
+.action-btn {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.call { background: var(--red); }
+.aid { background: var(--blue); }
+.location { background: var(--green); }
+
+/* Info Box */
+#infoBox {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--light);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  min-height: 80px;
+  white-space: pre-line;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: white;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  main {
+    max-width: 480px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🚨 Emergency Helper</h1>
+  <p>Instant support when every second matters</p>
+</header>
+
+<main>
+  <p class="section-title">Emergency Actions</p>
+
+  <button class="action-btn call" onclick="callEmergency()">📞 Call Emergency Services</button>
+  <button class="action-btn aid" onclick="showFirstAid()">🩹 View First Aid Steps</button>
+  <button class="action-btn location" onclick="shareLocation()">📍 Share My Location</button>
+
+  <div id="infoBox">
+    Select an action to get immediate assistance.
+  </div>
+</main>
+
+<footer>
+  Public Emergency Assistance Web Application • Educational Use
+</footer>
+
+<script>
+function callEmergency() {
+  document.getElementById("infoBox").textContent =
+    "Emergency Call Initiated (Demo)\n\nPlease dial your local emergency number immediately.";
+}
+
+function showFirstAid() {
+  document.getElementById("infoBox").textContent =
+    "Basic First Aid Steps:\n\n• Stay calm and ensure safety\n• Stop bleeding using pressure\n• Do not move injured person unnecessarily\n• Call emergency services";
+}
+
+function shareLocation() {
+  document.getElementById("infoBox").textContent =
+    "Location Shared Successfully (Demo)\n\nYour current location has been sent to emergency contacts.";
+}
+</script>
+
+</body>
+</html>
